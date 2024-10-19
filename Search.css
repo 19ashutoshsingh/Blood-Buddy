@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Neuton:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
+
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #a52a2a;
+    color: white;
+}
+
+header .logo {
+    font-size: 20px;
+}
+
+header .logo img{
+    width: 60%;
+}
+
+header .logo h1 {
+    margin-left: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    font-family: "Fredoka One", cursive;
+}
+
+nav ul li a.active {
+    text-decoration: underline;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f5d7d7;
+}
+
+.search-container input[type="text"] {
+    width: 40%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    background-color: #a52a2a;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+/* Updated section for layout */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Make donor list horizontally scrollable */
+.donor-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap; /* Prevent wrapping of the cards */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 20px;
+    white-space: nowrap; /* Prevent text wrapping inside the donor cards */
+}
+
+.donor-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    width: 200px; /* Fixed width for donor cards */
+    flex: 0 0 auto; /* Prevent shrinking of donor cards */
+}
+
+.donor-card img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+
+.donor-card h3 {
+    margin-top: 10px;
+}
+
+.donor-card p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.donor-card button {
+    padding: 10px 20px;
+    background-color: #a52a2a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Notification styles */
+.notifications {
+    flex: 0 0 25%;
+    background-color: #f5d7d7;
+    padding: 20px;
+    border-left: 5px solid #a52a2a;
+    margin-left: 20px;
+}
+
+.notifications h3 {
+    margin-top: 0;
+}
+
+.notifications ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.notifications ul li {
+    margin-bottom: 10px;
+}
+
+.volunteer-info {
+    background-color: #f5d7d7;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+footer {
+    background-color: #a52a2a;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
