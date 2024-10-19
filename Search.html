@@ -1,10 +1,9 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BloodConnect - Search Donors</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="search.css">
     <link rel="stylesheet" href='https://fontawesome.com/v4.7.0/icon/bars'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -15,7 +14,6 @@
     <header>
         <div class="logo">
             <img src="./Images/bb_logo(white).png" alt="BloodConnect Logo">
-            <!-- <h1>BloodConnect</h1> -->
         </div>
         <nav>
             <ul>
@@ -27,12 +25,10 @@
     </header>
 
     <div class="search-container">
-        <!-- Make sure we have the correct id here -->
         <input type="text" id="searchInput" placeholder="Search by blood type, location..." oninput="filterDonors()">
         <button onclick="filterDonors()">Search</button>
     </div>
 
-    <!-- Main container to hold both donor-list and notifications -->
     <div class="main-container">
         <section class="donor-list" id="donorList">
             <div class="donor-card" data-blood-type="A+" data-location="Jaipur">
@@ -70,7 +66,6 @@
                 <button>Contact</button>
             </div>
 
-            <!-- Add more donor cards as needed -->
         </section>
 
         <aside class="notifications">
@@ -90,6 +85,118 @@
 
     <footer>
         <p>© 2023 BloodConnect. All rights reserved.</p>
+    </footer>
+
+    <script src="search.js"></script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloodConnect - Search Donors</title>
+    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href='https://fontawesome.com/v4.7.0/icon/bars'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./Images/bb_logo(white).png" alt="BloodConnect Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./Register.html">Registration</a></li>
+                <li><a href="./Search.html" class="active">Search Donor</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search by blood type, location..." oninput="filterDonors()">
+        <button onclick="filterDonors()">Search</button>
+    </div>
+
+    <!-- Main container to hold both donor-list and notifications -->
+    <div class="main-container">
+        <section class="donor-list" id="donorList">
+            <!-- Donor Cards with new attributes for availability and last donation -->
+            <div class="donor-card" data-blood-type="A+" data-location="Jaipur" data-availability="true" data-last-donation="2024-05-15">
+                <img src="./Images/review-1.PNG" alt="">
+                <h3>Ashish Singh</h3>
+                <p>A+ | Jaipur</p>
+                <p>Available for donation</p>
+                <button onclick="showDonorProfile('Ashish Singh', 'A+', 'Jaipur', 'ashish@example.com', '1234567890', '2024-05-15', 'Call')">Contact</button>
+            </div>
+
+            <div class="donor-card" data-blood-type="B-" data-location="Noida" data-availability="true" data-last-donation="2024-04-01">
+                <img src="./Images/review-3.PNG" alt="">
+                <h3>Priya Sharma</h3>
+                <p>B- | Noida</p>
+                <p>Available for donation</p>
+                <button onclick="showDonorProfile('Priya Sharma', 'B-', 'Noida', 'priya@example.com', '9876543210', '2024-04-01', 'Email')">Contact</button>
+            </div>
+
+            <div class="donor-card" data-blood-type="O+" data-location="Pryagraj" data-availability="true" data-last-donation="2024-01-01">
+                <img src="./Images/review-2.PNG" alt="">
+                <h3>Yash Kesarwani</h3>
+                <p>O+ | Pryagraj</p>
+                <p>Available for donation</p>
+                <button onclick="showDonorProfile('Yash Kesarwani', 'O+', 'Pryagraj', 'yash@example.com', '1122334455', '2024-01-01', 'SMS')">Contact</button>
+            </div>
+
+            <div class="donor-card" data-blood-type="O+" data-location="Bangalore" data-availability="false" data-last-donation="2024-01-01">
+                <img src="./Images/review-2.PNG" alt="">
+                <h3>Himanshu Kumar</h3>
+                <p>O+ | Bangalore</p>
+                <p>Available for donation</p>
+                <button onclick="showDonorProfile('Himanshu Kumar', 'O+', 'Bangalore', 'himanshu@example.com', '1122334455', '2024-01-01', 'SMS')">Contact</button>
+            </div>
+            
+            <div class="donor-card" data-blood-type="AB-" data-location="Pryagraj" data-availability="true" data-last-donation="2024-01-01">
+                <img src="./Images/review-2.PNG" alt="">
+                <h3>Yash Kesarwani</h3>
+                <p>AB- | Pryagraj</p>
+                <p>Available for donation</p>
+                <button onclick="showDonorProfile('Yash Kesarwani', 'AB-', 'Pryagraj', 'yash@example.com', '1122334455', '2024-01-01', 'SMS')">Contact</button>
+            </div>
+        </section>
+
+        <aside class="notifications">
+            <h3>Notifications</h3>
+            <ul>
+                <li>1) John Doe has accepted your request</li>
+                <li>2) Sarah Lee is available for donation</li>
+                <li>3) New donor Mike Johnson joined near you</li>
+            </ul>
+        </aside>
+    </div>
+
+    <!-- Donor Profile Modal (Hidden by default) -->
+    <div id="donorProfileModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3 id="donorName">Donor Name</h3>
+            <p id="donorDetails"></p>
+            <p id="donorLastDonation"></p>
+            <p id="donorContactPreference"></p>
+            <button id="donorContactMethod">Contact</button>
+        </div>
+    </div>
+
+    <section class="volunteer-info">
+        <h2>The Role of Volunteers</h2>
+        <p>Volunteers are crucial in bridging the gap between donors and recipients, ensuring timely blood donations and managing logistics during emergencies...</p>
+    </section>
+
+    <footer>
+        <p>© 2024 Blood Buddy. All rights reserved.</p>
     </footer>
 
     <script src="search.js"></script>
